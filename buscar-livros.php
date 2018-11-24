@@ -210,7 +210,7 @@ if (!isset($_GET['search'])) {
       </div>
 
       <div class="table-container">
-        <table class='table is-bordered is-striped is-hoverable is-fullwidth'>
+        <table class='table is-bordered is-striped is-fullwidth'>
           <thead>
             <tr>
               <th>ID Local</th>
@@ -247,8 +247,12 @@ if (!isset($_GET['search'])) {
                 echo "<td>".$livro->anoLanc."</td>";
                 echo "<td>".$livro->isbn."</td>";
                 if ($adm == true) {
-                  echo "<td><a href='alterar-livro.php?id=".$livro->idLivro."' class='button is-warning'><span class='icon'><i class='far fa-edit'></i></span><span>Editar</span></td>";
-                  echo "<td><a href='buscar-livros.php?id=$livro->idLivro&del=true' class='button is-danger is-small'><span class='icon'><i class='fas fa-times'></i></span><span>Excluir</span></td>";
+                  echo "<td style='border-width: 0px; background-color: #fff;'>";
+                  echo "<div class='columns is-gapless'>";
+                  echo "<div class='column'><a href='alterar-livro.php?id=$livro->idLivro' class='button is-warning'><span class='icon'><i class='fas fa-edit'></i></span></div>";
+                  echo "<div class='column'><a href='buscar-livros.php?id=$livro->idLivro&del=true' class='button is-danger'><span class='icon'><i class='has-text-dark fas fa-times'></i></span></div>";
+                  echo "</div>";
+                  echo "</td>";
                 }
                 echo "</tr>";
               }
