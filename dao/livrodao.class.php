@@ -40,7 +40,7 @@ class LivroDAO{
 
   public function buscarLivrosPorFiltro($f,$q){
     try {
-      $sql = "select * from livro where ".$f." like '%".$q."%';";
+      $sql = "select * from livro where ".$f." like '%".$q."%' ORDER BY ".$f.";";
       $stat = $this->conexao->query($sql);
       $array = $stat->fetchAll(PDO::FETCH_CLASS, "Livro");
       return $array;
